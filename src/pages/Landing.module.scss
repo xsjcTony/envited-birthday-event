@@ -1,0 +1,49 @@
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    width: 100%;
+    min-height: 100vh;
+    background: #f6f2ff;
+
+    .heading-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 321px;
+        margin: 94px 0 36px;
+        text-align: center;
+        gap: 16px;
+
+        .heading {
+            color: #240d57;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1;
+
+            .heading-gradient {
+                background: linear-gradient(90deg, #8456EC 24.2%, #E87BF8 120.46%);
+                background-clip: text;
+                line-height: 41px;
+                text-align: center;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        .description {
+            color: #4f4f4f;
+            font-size: 16px;
+            line-height: 18px;
+        }
+    }
+
+    .preview-image {
+        width: 165.63px;
+        height: 292px;
+    }
+
+    .create-event-button {
+        margin-top: 34px;
+    }
+}

@@ -1,0 +1,36 @@
+.event-page {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    width: 100%;
+    min-height: 100vh;
+    background: #fbfaff;
+    gap: 11px;
+
+    .birthday-cake {
+        width: 100%;
+    }
+
+    .event-detail {
+        padding: 0 20px;
+
+        .event-name {
+            color: #240d57;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 32px;
+        }
+
+        .event-host {
+            margin: 4px 0 24px;
+            color: #828282;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16px;
+
+            .host-name {
+                font-weight: 700;
+            }
+        }
+    }
+}
