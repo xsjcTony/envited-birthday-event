@@ -22,7 +22,7 @@ const Event = (): JSX.Element => {
       state: eventState,
       postcode: eventPostcode
     },
-    photo: eventPhoto
+    // photo: eventPhoto
   } = useAppSelector(state => state.event)
 
 
@@ -31,15 +31,15 @@ const Event = (): JSX.Element => {
       <img alt="birthday cake" className={styles.birthdayCake} src={birthdayCake} />
 
       <div className={styles.eventDetail}>
-        <h2 className={styles.eventName}>Birthday Bash</h2>
+        <h2 className={styles.eventName}>{eventName}</h2>
         <p className={styles.eventHost}>
-          Hosted by <span className={styles.hostName}>Elysia</span>
+          Hosted by <span className={styles.hostName}>{eventHost}</span>
         </p>
 
         <InfoDisplayer
-          description={eventEndTime.toString()}
+          description={<>to <span className={styles.eventEndTime}>{eventEndTime}</span> UTC +10</>}
           icon={<Calendar />}
-          title={eventStartTime.toString()}
+          title={eventStartTime}
         />
         <InfoDisplayer
           description={`${eventSuburb}, ${eventState}, ${eventPostcode}`}

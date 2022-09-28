@@ -1,12 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
+import moment from 'moment'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 
 export interface Event {
   name: string
   host: string
-  start: Date
-  end: Date
+  start: string
+  end: string
   location: {
     street: string
     suburb: string
@@ -17,12 +18,11 @@ export interface Event {
 }
 
 
-/*
 const initialState: Event = {
   name: '',
   host: '',
-  start: new Date(),
-  end: new Date(),
+  start: moment().format('DD MMMM h:mmA'),
+  end: moment().format('DD MMMM h:mmA'),
   location: {
     street: '',
     suburb: '',
@@ -31,29 +31,20 @@ const initialState: Event = {
   },
   photo: null
 }
-*/
-
-const initialState: Event = {
-  name: 'Birthday Bash',
-  host: 'Elysia',
-  start: new Date(),
-  end: new Date(),
-  location: {
-    street: '1 Ferguson Street',
-    suburb: 'Black Rock',
-    state: 'VIC',
-    postcode: '3193'
-  },
-  photo: null
-}
-
 
 export const eventSlice = createSlice({
   name: 'event',
   initialState,
   reducers: {
     createEvent: (state, action: PayloadAction<Event>) => {
-      state = { ...action.payload }
+      const { name, host, start, end, location, photo } = action.payload
+
+      state.name = name
+      state.host = host
+      state.start = start
+      state.end = end
+      state.location = location
+      state.photo = photo
     },
     modifyLocation: (state, action: PayloadAction<Event['location']>) => {
       state.location = action.payload
