@@ -2,8 +2,8 @@
 
 Please run
 
-`npm install`
+`npm install` then `npm run dev`. Server should be available on `http://localhost:5173/`
 
-then
+Or
 
-`npm run dev`
+`npm install`, `npm run build` then `npm run preview`. Server should be available on `http://localhost:4173/`
